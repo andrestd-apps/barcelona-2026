@@ -5,41 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Barcelona · Jul 2026</title>
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#1C1C1E" />
+  <meta name="theme-color" content="#0E0E0E" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Barcelona 26" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --white: #FAFAF9;
-      --slate: #1C1C1E;
-      --blue: #005B99;
-      --blue-light: #E8F2FA;
-      --sand: #E8E0D4;
-      --coral: #E8553E;
-      --coral-light: #FDF0ED;
-      --grey: #6B6B6B;
-      --grey-light: #F2F0EE;
-      --border: #E2DDD8;
-      --radius: 16px;
-      --radius-sm: 10px;
+      --white: #F4F3F0;
+      --slate: #0E0E0E;
+      --blue: #0E0E0E;
+      --blue-light: #ECEBE7;
+      --sand: #E7E4DD;
+      --coral: #FF3B5C;
+      --coral-light: #FFECEF;
+      --grey: #8A8A85;
+      --grey-light: #ECEBE7;
+      --border: #E2E0DB;
+      --radius: 6px;
+      --radius-sm: 4px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--white);
       color: var(--slate);
       min-height: 100vh;
       padding-bottom: 80px;
     }
-
-    /* ── HEADER ── */
     .header {
       background: var(--slate);
       color: var(--white);
@@ -57,361 +53,156 @@
       opacity: 0.12;
     }
     .header-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--coral);
-      margin-bottom: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--coral); margin-bottom: 8px;
     }
     .header-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 600;
-      line-height: 1.1;
-      margin-bottom: 6px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 36px; font-weight: 600; line-height: 1.1; margin-bottom: 6px;
     }
-    .header-sub {
-      font-size: 14px;
-      color: rgba(250,250,249,0.55);
-      font-weight: 300;
-    }
-    .header-dates {
-      margin-top: 20px;
-      display: flex;
-      gap: 12px;
-    }
+    .header-sub { font-size: 14px; color: rgba(250,250,249,0.55); font-weight: 300; }
+    .header-dates { margin-top: 20px; display: flex; gap: 12px; }
     .date-chip {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 13px;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px; padding: 6px 14px; font-size: 13px; font-weight: 500;
+      display: flex; align-items: center; gap: 6px;
     }
     .countdown {
-      margin-top: 16px;
-      background: rgba(232,85,62,0.18);
-      border: 1px solid rgba(232,85,62,0.3);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px;
-      font-size: 13px;
-      color: #ffb8a8;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      margin-top: 16px; background: rgba(232,85,62,0.18);
+      border: 1px solid rgba(232,85,62,0.3); border-radius: var(--radius-sm);
+      padding: 10px 14px; font-size: 13px; color: #ffb8a8;
+      display: flex; align-items: center; gap: 8px;
     }
     #countdown-text { font-weight: 600; }
-
-    /* ── BOTTOM NAV ── */
     .bottom-nav {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: var(--white);
-      border-top: 1px solid var(--border);
-      display: flex;
-      z-index: 100;
-      padding: 0 4px;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--white); border-top: 1px solid var(--border);
+      display: flex; z-index: 100; padding: 0 4px;
       padding-bottom: env(safe-area-inset-bottom);
     }
     .nav-btn {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      padding: 10px 4px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      color: var(--grey);
-      font-size: 10px;
-      font-weight: 500;
+      flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px;
+      padding: 10px 4px; background: none; border: none; cursor: pointer;
+      font-family: inherit; color: var(--grey); font-size: 10px; font-weight: 500;
       transition: color 0.15s;
     }
     .nav-btn .icon { font-size: 20px; line-height: 1; }
     .nav-btn.active { color: var(--blue); }
     .nav-btn.active .nav-dot {
-      display: block;
-      width: 4px; height: 4px;
-      background: var(--blue);
-      border-radius: 50%;
-      margin: 0 auto -2px;
+      display: block; width: 4px; height: 4px; background: var(--blue);
+      border-radius: 50%; margin: 0 auto -2px;
     }
     .nav-dot { display: none; }
-
-    /* ── SECTIONS ── */
     .section { display: none; padding: 20px; }
     .section.active { display: block; }
-
     .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600;
+      margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
     }
-
-    /* ── CARD ── */
     .card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      margin-bottom: 12px;
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 18px; margin-bottom: 12px;
     }
-    .card-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 10px;
-    }
-
-    /* ── VUELOS ── */
     .flight-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; }
     .flight-header {
-      background: var(--blue);
-      color: #fff;
-      padding: 12px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: var(--blue); color: #fff; padding: 12px 18px;
+      display: flex; justify-content: space-between; align-items: center;
     }
     .flight-header-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
     .flight-header-airline { font-size: 13px; font-weight: 600; }
     .flight-body { padding: 18px; }
-    .flight-route {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
+    .flight-route { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
     .flight-airport { text-align: center; }
     .flight-code { font-size: 28px; font-weight: 300; color: var(--slate); letter-spacing: -1px; }
     .flight-city { font-size: 11px; color: var(--grey); margin-top: 2px; }
     .flight-time { font-size: 16px; font-weight: 600; margin-top: 4px; }
-    .flight-arrow {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-    }
-    .flight-line {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, var(--blue), var(--coral));
-      position: relative;
-    }
+    .flight-arrow { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .flight-line { width: 100%; height: 1px; background: linear-gradient(to right, var(--blue), var(--coral)); position: relative; }
     .flight-line::after {
-      content: '✈';
-      position: absolute;
-      top: -9px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 14px;
-      color: var(--blue);
+      content: '✈'; position: absolute; top: -9px; left: 50%;
+      transform: translateX(-50%); font-size: 14px; color: var(--blue);
     }
     .flight-duration { font-size: 11px; color: var(--grey); margin-top: 6px; }
-    .flight-meta {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .meta-chip {
-      background: var(--grey-light);
-      border-radius: 8px;
-      padding: 6px 10px;
-      font-size: 12px;
-      color: var(--slate);
-    }
+    .flight-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+    .meta-chip { background: var(--grey-light); border-radius: 8px; padding: 6px 10px; font-size: 12px; color: var(--slate); }
     .meta-chip span { color: var(--grey); font-size: 10px; display: block; }
     .reservation-badge {
-      background: var(--blue-light);
-      color: var(--blue);
-      border-radius: 8px;
-      padding: 6px 10px;
-      font-size: 13px;
-      font-weight: 600;
-      font-family: monospace;
-      letter-spacing: 0.1em;
+      background: var(--blue-light); color: var(--blue); border-radius: 8px;
+      padding: 6px 10px; font-size: 13px; font-weight: 600; font-family: monospace; letter-spacing: 0.1em;
     }
-    .reservation-badge span { color: var(--blue); opacity: 0.7; font-size: 10px; display: block; font-family: 'DM Sans', sans-serif; font-weight: 400; letter-spacing: 0; }
-
-    /* ── ALOJAMIENTO ── */
-    .hotel-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      margin-bottom: 4px;
-    }
+    .reservation-badge span { color: var(--blue); opacity: 0.7; font-size: 10px; display: block; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0; }
+    .hotel-name { font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin-bottom: 4px; }
     .hotel-stars { color: #F5B400; font-size: 14px; margin-bottom: 12px; }
     .info-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 14px;
+      display: flex; align-items: flex-start; gap: 10px; padding: 10px 0;
+      border-bottom: 1px solid var(--border); font-size: 14px;
     }
     .info-row:last-child { border-bottom: none; }
     .info-icon { font-size: 16px; flex-shrink: 0; width: 20px; text-align: center; }
     .info-label { color: var(--grey); font-size: 12px; margin-bottom: 2px; }
     .info-value { font-weight: 500; }
     .info-link { color: var(--blue); text-decoration: none; font-weight: 500; }
-    .checkin-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .checkin-box {
-      background: var(--grey-light);
-      border-radius: var(--radius-sm);
-      padding: 12px;
-      text-align: center;
-    }
+    .checkin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+    .checkin-box { background: var(--grey-light); border-radius: var(--radius-sm); padding: 12px; text-align: center; }
     .checkin-box .label { font-size: 11px; color: var(--grey); text-transform: uppercase; letter-spacing: 0.08em; }
     .checkin-box .time { font-size: 22px; font-weight: 300; margin-top: 4px; }
     .checkin-box.highlight { background: var(--blue-light); }
     .checkin-box.highlight .time { color: var(--blue); }
     .map-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: var(--slate);
-      color: #fff;
-      text-decoration: none;
-      border-radius: var(--radius-sm);
-      padding: 13px;
-      font-size: 14px;
-      font-weight: 500;
-      margin-top: 14px;
-      transition: opacity 0.15s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--slate); color: #fff; text-decoration: none;
+      border-radius: var(--radius-sm); padding: 13px; font-size: 14px; font-weight: 500;
+      margin-top: 14px; transition: opacity 0.15s;
     }
     .map-btn:active { opacity: 0.8; }
-
-    /* ── ITINERARIO ── */
-    .day-header {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin: 20px 0 14px;
-    }
+    .day-header { display: flex; align-items: baseline; gap: 10px; margin: 20px 0 14px; }
     .day-header:first-child { margin-top: 0; }
-    .day-number {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--coral);
-    }
-    .day-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-    }
+    .day-number { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); }
+    .day-name { font-family: 'Space Grotesk', sans-serif; font-size: 18px; }
     .day-date { font-size: 12px; color: var(--grey); margin-left: auto; }
-
     .timeline { position: relative; padding-left: 28px; }
     .timeline::before {
-      content: '';
-      position: absolute;
-      left: 8px; top: 6px; bottom: 6px;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--blue) 0%, var(--coral) 100%);
+      content: ''; position: absolute; left: 8px; top: 6px; bottom: 6px;
+      width: 1px; background: linear-gradient(to bottom, var(--blue) 0%, var(--coral) 100%);
     }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 14px;
-    }
+    .timeline-item { position: relative; margin-bottom: 14px; }
     .timeline-dot {
-      position: absolute;
-      left: -24px; top: 6px;
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: var(--white);
-      border: 2px solid var(--blue);
+      position: absolute; left: -24px; top: 6px; width: 10px; height: 10px;
+      border-radius: 50%; background: var(--white); border: 2px solid var(--blue);
     }
     .timeline-dot.coral { border-color: var(--coral); }
     .timeline-dot.filled { background: var(--coral); border-color: var(--coral); }
-
-    .event-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 14px;
-    }
-    .event-card.highlight-coral {
-      border-color: var(--coral);
-      background: var(--coral-light);
-    }
+    .timeline-dot.grey { border-color: var(--grey); }
+    .event-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; }
+    .event-card.highlight-coral { border-color: var(--coral); background: var(--coral-light); }
     .event-time { font-size: 11px; color: var(--grey); font-weight: 500; margin-bottom: 4px; }
     .event-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
     .event-desc { font-size: 13px; color: var(--grey); line-height: 1.5; }
     .event-tag {
-      display: inline-block;
-      background: var(--coral);
-      color: #fff;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: 4px;
-      padding: 2px 6px;
-      margin-bottom: 6px;
+      display: inline-block; background: var(--coral); color: #fff; font-size: 10px;
+      font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 4px; padding: 2px 6px; margin-bottom: 6px;
     }
     .event-tag.blue { background: var(--blue); }
     .event-tag.grey { background: var(--grey); }
+    .event-tag.sand { background: var(--sand); color: var(--slate); }
     .event-map-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 500;
-      text-decoration: none;
-      margin-top: 8px;
+      display: inline-flex; align-items: center; gap: 4px; color: var(--blue);
+      font-size: 12px; font-weight: 500; text-decoration: none; margin-top: 8px;
     }
-
     .tip-box {
-      background: var(--sand);
-      border-radius: var(--radius-sm);
-      padding: 12px 14px;
-      font-size: 13px;
-      color: var(--slate);
-      margin: 14px 0;
-      display: flex;
-      gap: 8px;
+      background: var(--sand); border-radius: var(--radius-sm); padding: 12px 14px;
+      font-size: 13px; color: var(--slate); margin: 14px 0; display: flex; gap: 8px;
     }
     .tip-box .tip-icon { flex-shrink: 0; }
-
-    /* ── MAPAS ── */
     .map-list-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      color: var(--slate);
+      display: flex; align-items: center; gap: 14px; padding: 14px 0;
+      border-bottom: 1px solid var(--border); text-decoration: none; color: var(--slate);
     }
     .map-list-item:last-child { border-bottom: none; }
     .map-icon-wrap {
-      width: 42px; height: 42px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
+      width: 42px; height: 42px; border-radius: 12px; display: flex;
+      align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
     }
     .map-icon-wrap.blue { background: var(--blue-light); }
     .map-icon-wrap.coral { background: var(--coral-light); }
@@ -420,26 +211,47 @@
     .map-item-title { font-size: 14px; font-weight: 600; }
     .map-item-sub { font-size: 12px; color: var(--grey); margin-top: 2px; }
     .map-arrow { color: var(--grey); font-size: 16px; }
-
-    /* ── MISC ── */
     .alert-banner {
-      background: #FFF8E1;
-      border: 1px solid #FFE082;
-      border-radius: var(--radius-sm);
-      padding: 12px 14px;
-      font-size: 13px;
-      display: flex;
-      gap: 8px;
-      margin-bottom: 14px;
-      color: #5D4037;
+      background: #FFF8E1; border: 1px solid #FFE082; border-radius: var(--radius-sm);
+      padding: 12px 14px; font-size: 13px; display: flex; gap: 8px;
+      margin-bottom: 14px; color: #5D4037;
     }
+    .map-section-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--grey); margin: 18px 0 6px 2px;
+    }
+
+    /* ── Awwwards-style refinements ── */
+    body { -webkit-font-smoothing: antialiased; letter-spacing: -0.01em; }
+    .header-eyebrow, .card-label, .flight-header-label, .day-number,
+    .event-tag, .map-section-label, .checkin-box .label {
+      letter-spacing: 0.18em;
+    }
+    .header-title { font-weight: 700; letter-spacing: -0.04em; font-size: 40px; }
+    .section-title, .hotel-name, .day-name { font-weight: 500; letter-spacing: -0.03em; }
+    .flight-code { font-weight: 500; letter-spacing: -0.02em; }
+    .checkin-box .time { font-weight: 400; }
+    /* Sharpen: hairline borders, minimal fills */
+    .card, .flight-card { border-radius: var(--radius); }
+    .event-tag { border-radius: 2px; font-weight: 600; }
+    /* Accent for interactive links + active nav */
+    .info-link, .event-map-link { color: var(--coral); text-decoration: none; }
+    .nav-btn.active { color: var(--coral); }
+    .nav-btn.active .nav-dot { background: var(--coral); }
+    .timeline-dot { border-color: var(--slate); }
+    .timeline-dot.blue { border-color: var(--slate); }
+    .timeline-dot.coral, .timeline-dot.filled { border-color: var(--coral); }
+    .timeline-dot.filled { background: var(--coral); }
+    .timeline::before { background: linear-gradient(to bottom, var(--slate) 0%, var(--coral) 100%); }
+    .flight-line::after { color: var(--slate); }
+    /* Reservation badge: quiet, mono */
+    .reservation-badge { border-radius: 2px; }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <div class="header">
-    <div class="header-eyebrow">City Break</div>
+    <div class="header-eyebrow">City Break · 33 h</div>
     <div class="header-title">Barcelona</div>
     <div class="header-sub">3 – 4 de julio de 2026</div>
     <div class="header-dates">
@@ -452,38 +264,24 @@
     </div>
   </div>
 
-  <!-- SECTIONS -->
-
   <!-- VUELOS -->
   <div class="section active" id="sec-vuelos">
-
-    <!-- IDA -->
     <div class="flight-card">
       <div class="flight-header">
         <div>
           <div class="flight-header-label">Vuelo de ida</div>
           <div class="flight-header-airline">Vueling · VY1681</div>
         </div>
-        <div class="reservation-badge">
-          IJBGFZ
-          <span>Cód. reserva</span>
-        </div>
+        <div class="reservation-badge">IJBGFZ<span>Cód. reserva</span></div>
       </div>
       <div class="flight-body">
         <div class="flight-route">
           <div class="flight-airport">
-            <div class="flight-code">SCQ</div>
-            <div class="flight-city">Santiago</div>
-            <div class="flight-time">09:15</div>
+            <div class="flight-code">SCQ</div><div class="flight-city">Santiago</div><div class="flight-time">09:15</div>
           </div>
-          <div class="flight-arrow">
-            <div class="flight-line"></div>
-            <div class="flight-duration">1h 40min</div>
-          </div>
+          <div class="flight-arrow"><div class="flight-line"></div><div class="flight-duration">1h 40min</div></div>
           <div class="flight-airport" style="text-align:right">
-            <div class="flight-code">BCN</div>
-            <div class="flight-city">Barcelona</div>
-            <div class="flight-time">10:55</div>
+            <div class="flight-code">BCN</div><div class="flight-city">Barcelona</div><div class="flight-time">10:55</div>
           </div>
         </div>
         <div class="flight-meta">
@@ -493,34 +291,22 @@
         </div>
       </div>
     </div>
-
-    <!-- VUELTA -->
     <div class="flight-card">
       <div class="flight-header" style="background: var(--coral)">
         <div>
           <div class="flight-header-label">Vuelo de vuelta</div>
           <div class="flight-header-airline">Vueling · regreso</div>
         </div>
-        <div class="reservation-badge" style="background: rgba(255,255,255,0.2); color: #fff;">
-          W9G24R
-          <span style="color: rgba(255,255,255,0.7)">Núm. reserva</span>
-        </div>
+        <div class="reservation-badge" style="background: rgba(255,255,255,0.2); color: #fff;">W9G24R<span style="color: rgba(255,255,255,0.7)">Núm. reserva</span></div>
       </div>
       <div class="flight-body">
         <div class="flight-route">
           <div class="flight-airport">
-            <div class="flight-code">BCN</div>
-            <div class="flight-city">Barcelona</div>
-            <div class="flight-time">19:05</div>
+            <div class="flight-code">BCN</div><div class="flight-city">Barcelona</div><div class="flight-time">19:05</div>
           </div>
-          <div class="flight-arrow">
-            <div class="flight-line" style="background: linear-gradient(to right, var(--coral), var(--blue))"></div>
-            <div class="flight-duration">1h 55min</div>
-          </div>
+          <div class="flight-arrow"><div class="flight-line" style="background: linear-gradient(to right, var(--coral), var(--blue))"></div><div class="flight-duration">1h 55min</div></div>
           <div class="flight-airport" style="text-align:right">
-            <div class="flight-code">SCQ</div>
-            <div class="flight-city">Santiago</div>
-            <div class="flight-time">21:00</div>
+            <div class="flight-code">SCQ</div><div class="flight-city">Santiago</div><div class="flight-time">21:00</div>
           </div>
         </div>
         <div class="flight-meta">
@@ -530,318 +316,263 @@
         </div>
       </div>
     </div>
-
     <div class="tip-box">
       <span class="tip-icon">💡</span>
-      <span>Recuerda que el aeropuerto de El Prat (BCN) tiene dos terminales. Vueling opera habitualmente desde la <strong>Terminal 1</strong>. Comprueba el embarque en tu tarjeta de embarque.</span>
+      <span>Vueling opera habitualmente desde la <strong>Terminal 1</strong> de El Prat. Comprueba el embarque en tu tarjeta.</span>
     </div>
-
   </div>
 
   <!-- ALOJAMIENTO -->
   <div class="section" id="sec-hotel">
-
     <div class="card">
       <div class="hotel-name">Hotel Hesperia Barcelona Fira</div>
       <div class="hotel-stars">★★★★</div>
-
-      <div class="info-row">
-        <span class="info-icon">📍</span>
-        <div>
-          <div class="info-label">Dirección</div>
-          <div class="info-value">Mare de Déu de Bellvitge, 3<br>08907 L'Hospitalet de Llobregat</div>
-        </div>
-      </div>
-      <div class="info-row">
-        <span class="info-icon">📋</span>
-        <div>
-          <div class="info-label">Reg. turístico</div>
-          <div class="info-value">HB-004330</div>
-        </div>
-      </div>
-      <div class="info-row">
-        <span class="info-icon">📞</span>
-        <div>
-          <div class="info-label">Teléfono</div>
-          <a class="info-link" href="tel:+34930900692">+34 930 90 06 92</a>
-        </div>
-      </div>
-      <div class="info-row">
-        <span class="info-icon">✉️</span>
-        <div>
-          <div class="info-label">Email</div>
-          <a class="info-link" href="mailto:rsv.hhfira@hesperia.com">rsv.hhfira@hesperia.com</a>
-        </div>
-      </div>
-
+      <div class="info-row"><span class="info-icon">📍</span><div><div class="info-label">Dirección</div><div class="info-value">Mare de Déu de Bellvitge, 3<br>08907 L'Hospitalet de Llobregat</div></div></div>
+      <div class="info-row"><span class="info-icon">📋</span><div><div class="info-label">Reg. turístico</div><div class="info-value">HB-004330</div></div></div>
+      <div class="info-row"><span class="info-icon">📞</span><div><div class="info-label">Teléfono</div><a class="info-link" href="tel:+34930900692">+34 930 90 06 92</a></div></div>
+      <div class="info-row"><span class="info-icon">✉️</span><div><div class="info-label">Email</div><a class="info-link" href="mailto:rsv.hhfira@hesperia.com">rsv.hhfira@hesperia.com</a></div></div>
       <div class="checkin-grid">
-        <div class="checkin-box highlight">
-          <div class="label">Check-in</div>
-          <div class="time">15:00</div>
-        </div>
-        <div class="checkin-box">
-          <div class="label">Check-out</div>
-          <div class="time">12:00</div>
-        </div>
+        <div class="checkin-box highlight"><div class="label">Check-in</div><div class="time">15:00</div></div>
+        <div class="checkin-box"><div class="label">Check-out</div><div class="time">12:00</div></div>
       </div>
-
-      <a class="map-btn" href="https://maps.app.goo.gl/pvoi6HV8WP3hb9Wp6" target="_blank">
-        🗺️ Abrir en Google Maps
-      </a>
+      <a class="map-btn" href="https://maps.app.goo.gl/pvoi6HV8WP3hb9Wp6" target="_blank">🗺️ Abrir en Google Maps</a>
     </div>
-
     <div class="tip-box">
-      <span class="tip-icon">⚠️</span>
-      <span>Llegas al aeropuerto a las ~11:00h pero el check-in es a las 15:00h. Puedes dejar el equipaje en consigna en el hotel y aprovechar la mañana en el centro.</span>
+      <span class="tip-icon">🧳</span>
+      <span>Tu plan usa consignas <strong>LOCKER LOCK</strong> para no cargar con el equipaje: día 1 en Plaça Catalunya, día 2 en Sagrada Família.</span>
     </div>
-
   </div>
 
   <!-- ITINERARIO -->
   <div class="section" id="sec-itinerario">
 
-    <!-- DÍA 1 -->
     <div class="day-header">
       <span class="day-number">Día 1</span>
-      <span class="day-name">Llegada a Barcelona</span>
+      <span class="day-name">Centro histórico y evento</span>
       <span class="day-date">Vie 3 Jul</span>
     </div>
 
     <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-dot blue"></div>
+      <div class="timeline-item"><div class="timeline-dot blue"></div>
         <div class="event-card">
-          <div class="event-time">09:15 – 10:55</div>
-          <div class="event-tag blue">Vuelo</div>
-          <div class="event-title">SCQ → BCN · VY1681</div>
-          <div class="event-desc">Vuelo directo de 1h 40min. Llegas al aeropuerto El Prat a las 10:55.</div>
+          <div class="event-time">11:00</div><div class="event-tag blue">Llegada</div>
+          <div class="event-title">Aeropuerto de Barcelona</div>
+          <div class="event-desc">Aerobús hacia el centro (~7 €).</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Aeropuerto+Josep+Tarradellas+Barcelona+El+Prat" target="_blank">📍 Aeropuerto El Prat</a>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
+      <div class="timeline-item"><div class="timeline-dot"></div>
         <div class="event-card">
-          <div class="event-time">~11:30</div>
-          <div class="event-tag grey">Traslado</div>
-          <div class="event-title">Aeropuerto → Hotel</div>
-          <div class="event-desc">Deja el equipaje en el hotel (sin check-in aún). El hotel está en L'Hospitalet, muy cerca del Fira.</div>
-          <a class="event-map-link" href="https://maps.app.goo.gl/pvoi6HV8WP3hb9Wp6" target="_blank">📍 Ver hotel en mapa</a>
+          <div class="event-time">11:45 – 12:00</div><div class="event-tag grey">Traslado</div>
+          <div class="event-title">Llegada a Plaça de Catalunya</div>
+          <div class="event-desc">Fin de trayecto del Aerobús en pleno centro.</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Placa+de+Catalunya+Barcelona" target="_blank">📍 Plaça de Catalunya</a>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
+      <div class="timeline-item"><div class="timeline-dot grey"></div>
         <div class="event-card">
-          <div class="event-time">12:00 – 14:30</div>
-          <div class="event-tag grey">Libre</div>
-          <div class="event-title">Mañana libre en Barcelona</div>
-          <div class="event-desc">Con el equipaje en el hotel, puedes acercarte en metro al Barrio Gótico o al Born. Ideal para un café y pasear sin prisa.</div>
-          <a class="event-map-link" href="https://maps.app.goo.gl/VQ5MfFn7GNgr6K1x8" target="_blank">📍 Barrio Gótico</a>
+          <div class="event-time">12:00</div><div class="event-tag grey">Equipaje</div>
+          <div class="event-title">Consigna · LOCKER LOCK Passeig de Gràcia</div>
+          <div class="event-desc">Deja el equipaje para moverte ligero por el centro.</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Locker+Lock+Passeig+de+Gracia+Barcelona" target="_blank">📍 Ver consigna</a>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
+      <div class="timeline-item"><div class="timeline-dot"></div>
         <div class="event-card">
-          <div class="event-time">15:00</div>
-          <div class="event-tag grey">Hotel</div>
+          <div class="event-time">12:15 – 14:00</div><div class="event-tag sand">Paseo</div>
+          <div class="event-title">Ruta por el centro histórico</div>
+          <div class="event-desc">Plaça de Catalunya · La Rambla · Mercat de la Boqueria · Barri Gòtic · Catedral de Barcelona · Plaça Sant Jaume. Ruta compacta y casi sin transporte.</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=La+Rambla+Barcelona" target="_blank">📍 La Rambla</a>
+        </div>
+      </div>
+      <div class="timeline-item"><div class="timeline-dot grey"></div>
+        <div class="event-card">
+          <div class="event-time">14:00 – 14:15</div><div class="event-tag grey">Equipaje</div>
+          <div class="event-title">Recoger equipaje</div>
+          <div class="event-desc">Vuelve a la consigna de Passeig de Gràcia.</div>
+        </div>
+      </div>
+      <div class="timeline-item"><div class="timeline-dot"></div>
+        <div class="event-card">
+          <div class="event-time">14:15 – 14:50</div><div class="event-tag grey">Hotel</div>
+          <div class="event-title">Metro hacia Bellvitge</div>
+          <div class="event-desc">Llegada al hotel muy cerca de las 15:00, tu objetivo inicial.</div>
+          <a class="event-map-link" href="https://maps.app.goo.gl/pvoi6HV8WP3hb9Wp6" target="_blank">📍 Hotel Hesperia Fira</a>
+        </div>
+      </div>
+      <div class="timeline-item"><div class="timeline-dot"></div>
+        <div class="event-card">
+          <div class="event-time">15:00</div><div class="event-tag grey">Hotel</div>
           <div class="event-title">Check-in · Hesperia Fira</div>
-          <div class="event-desc">Recoge la habitación, descansa un momento y prepárate para el evento de la tarde.</div>
+          <div class="event-desc">Deja las cosas y prepárate para el evento.</div>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot filled"></div>
+      <div class="timeline-item"><div class="timeline-dot"></div>
+        <div class="event-card">
+          <div class="event-time">16:45</div><div class="event-tag grey">Traslado</div>
+          <div class="event-title">Taxi/Cabify al evento</div>
+          <div class="event-desc">Hacia Jardines de la Finca Agustí Pedro Pons.</div>
+        </div>
+      </div>
+      <div class="timeline-item"><div class="timeline-dot filled"></div>
         <div class="event-card highlight-coral">
-          <div class="event-time">18:00</div>
-          <div class="event-tag">🎉 Evento</div>
+          <div class="event-time">18:00</div><div class="event-tag">🎉 Evento</div>
           <div class="event-title">LABASAD FEST 2026</div>
-          <div class="event-desc">Jardines de la Finca Agustí Pedro Pons · Av. de Vallvidrera, 25, 08017 Barcelona</div>
-          <a class="event-map-link" href="https://maps.app.goo.gl/JEvLXEE9j7VrR9sv8" target="_blank">📍 Cómo llegar al evento</a>
+          <div class="event-desc">Jardines de la Finca Agustí Pedro Pons · Av. de Vallvidrera, 25. Resto de la tarde libre.</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Jardins+de+la+Finca+Agusti+Pedro+Pons+Barcelona" target="_blank">📍 Cómo llegar</a>
         </div>
       </div>
-
     </div>
 
-    <!-- DÍA 2 -->
     <div class="day-header">
       <span class="day-number">Día 2</span>
-      <span class="day-name">Barcelona · Vuelta</span>
+      <span class="day-name">Gaudí y miradores</span>
       <span class="day-date">Sáb 4 Jul</span>
     </div>
 
     <div class="alert-banner">
       <span>⏰</span>
-      <span>Check-out antes de las 12:00. Vuelo de vuelta a las 19:05 — tienes la tarde libre.</span>
+      <span>Check-out 08:00 · vuelo 19:05. Día completo con el equipaje en consigna.</span>
     </div>
 
     <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
+      <div class="timeline-item"><div class="timeline-dot grey"></div>
         <div class="event-card">
-          <div class="event-time">08:30 – 10:00</div>
-          <div class="event-tag grey">Mañana</div>
-          <div class="event-title">Desayuno y paseo por el Eixample</div>
-          <div class="event-desc">El barrio que rodea la Sagrada Família es perfecto para un desayuno tranquilo. Merece la pena ver la fachada aunque no entres.</div>
-          <a class="event-map-link" href="https://maps.app.goo.gl/nRiXKWQoNyFJSMBD9" target="_blank">📍 Sagrada Família</a>
+          <div class="event-time">08:00</div><div class="event-tag grey">Hotel</div>
+          <div class="event-title">Check-out del hotel</div>
+          <div class="event-desc">Metro Bellvitge → Sagrada Família.</div>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
+      <div class="timeline-item"><div class="timeline-dot grey"></div>
         <div class="event-card">
-          <div class="event-time">10:30 – 12:00</div>
-          <div class="event-tag grey">Cultura</div>
-          <div class="event-title">Paseo de Gràcia · Manzana de la Discordia</div>
-          <div class="event-desc">Casa Batlló, Casa Amatller y Casa Lleó Morera en un tramo de 100m. Arquitectura modernista al aire libre y sin coste.</div>
-          <a class="event-map-link" href="https://maps.app.goo.gl/dvUFCKDRHHhH8DKEA" target="_blank">📍 Casa Batlló</a>
+          <div class="event-time">08:45</div><div class="event-tag grey">Equipaje</div>
+          <div class="event-title">Consigna · LOCKER LOCK Sagrada Família</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Locker+Lock+Sagrada+Familia+Barcelona" target="_blank">📍 Ver consigna</a>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
+      <div class="timeline-item"><div class="timeline-dot filled"></div>
         <div class="event-card">
-          <div class="event-time">12:00</div>
-          <div class="event-tag grey">Hotel</div>
-          <div class="event-title">Check-out · Hesperia Fira</div>
-          <div class="event-desc">Deja el equipaje en consigna si el hotel lo permite, para seguir disfrutando de la tarde.</div>
+          <div class="event-time">09:00 – 10:30</div><div class="event-tag">Imprescindible</div>
+          <div class="event-title">Sagrada Família</div>
+          <div class="event-desc">Reserva la primera hora disponible (~09:00).</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Sagrada+Familia+Barcelona" target="_blank">📍 Sagrada Família</a>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
+      <div class="timeline-item"><div class="timeline-dot"></div>
         <div class="event-card">
-          <div class="event-time">12:30 – 15:00</div>
-          <div class="event-tag grey">Gastronomía</div>
-          <div class="event-title">Mercado de la Boqueria o El Born</div>
-          <div class="event-desc">Vermut y pintxos en el Born, o tapas en alguno de los bares alrededor del mercado. Una última comida con sabor barcelonés antes de volver.</div>
-          <a class="event-map-link" href="https://maps.app.goo.gl/uvbhQp1oCKrG3bSX8" target="_blank">📍 La Boqueria</a>
+          <div class="event-time">10:40 – 12:00</div><div class="event-tag sand">Modernismo</div>
+          <div class="event-title">Recinte Modernista de Sant Pau</div>
+          <div class="event-desc">A pocos minutos de la Sagrada Família.</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Recinte+Modernista+de+Sant+Pau+Barcelona" target="_blank">📍 Sant Pau</a>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
+      <div class="timeline-item"><div class="timeline-dot"></div>
         <div class="event-card">
-          <div class="event-time">~16:00</div>
-          <div class="event-tag grey">Traslado</div>
-          <div class="event-title">Hacia el aeropuerto</div>
-          <div class="event-desc">En Aerobús o metro L9 Sud. Calcula ~45 min y llega con 2h de antelación para el vuelo de las 19:05.</div>
-          <a class="event-map-link" href="https://maps.app.goo.gl/ztBqK8K3cMJHLhEJ7" target="_blank">📍 Aeropuerto El Prat</a>
+          <div class="event-time">12:15 – 13:30</div><div class="event-tag sand">Museo</div>
+          <div class="event-title">Museu del Disseny de Barcelona</div>
+          <div class="event-desc">Metro Sant Pau → Museu del Disseny (Glòries).</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Museu+del+Disseny+de+Barcelona" target="_blank">📍 Museu del Disseny</a>
         </div>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot coral"></div>
+      <div class="timeline-item"><div class="timeline-dot grey"></div>
         <div class="event-card">
-          <div class="event-time">19:05 – 21:00</div>
-          <div class="event-tag">Vuelo</div>
+          <div class="event-time">13:30 – 14:15</div><div class="event-tag grey">Comida</div>
+          <div class="event-title">Comida</div>
+        </div>
+      </div>
+      <div class="timeline-item"><div class="timeline-dot"></div>
+        <div class="event-card">
+          <div class="event-time">14:15 – 15:00</div><div class="event-tag sand">Mirador</div>
+          <div class="event-title">Búnkers del Carmel</div>
+          <div class="event-desc">Subida en taxi. Las mejores vistas panorámicas de Barcelona.</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Bunkers+del+Carmel+Barcelona" target="_blank">📍 Búnkers del Carmel</a>
+        </div>
+      </div>
+      <div class="timeline-item"><div class="timeline-dot filled"></div>
+        <div class="event-card">
+          <div class="event-time">15:30 – 16:30</div><div class="event-tag">Imprescindible</div>
+          <div class="event-title">Casa Batlló</div>
+          <div class="event-desc">Traslado a Passeig de Gràcia. Reserva la entrada para las 15:30.</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Casa+Batllo+Barcelona" target="_blank">📍 Casa Batlló</a>
+        </div>
+      </div>
+      <div class="timeline-item"><div class="timeline-dot"></div>
+        <div class="event-card">
+          <div class="event-time">16:30 – 17:00</div><div class="event-tag sand">Paseo</div>
+          <div class="event-title">Gótico, Catedral y El Born</div>
+          <div class="event-desc">Plaça de Catalunya · Barrio Gótico · Catedral de Barcelona · El Born.</div>
+          <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Catedral+de+Barcelona" target="_blank">📍 Catedral de Barcelona</a>
+        </div>
+      </div>
+      <div class="timeline-item"><div class="timeline-dot grey"></div>
+        <div class="event-card">
+          <div class="event-time">17:00 – 17:15</div><div class="event-tag grey">Equipaje</div>
+          <div class="event-title">Recoger equipaje y taxi al aeropuerto</div>
+          <div class="event-desc">Llegada prevista 17:45 – 18:00.</div>
+        </div>
+      </div>
+      <div class="timeline-item"><div class="timeline-dot coral"></div>
+        <div class="event-card">
+          <div class="event-time">19:05</div><div class="event-tag">Vuelo</div>
           <div class="event-title">BCN → SCQ · Vuelta a casa</div>
-          <div class="event-desc">Reserva W9G24R. Llegada a Santiago a las 21:00.</div>
+          <div class="event-desc">Reserva W9G24R. Llegada a Santiago 21:00.</div>
         </div>
       </div>
-
     </div>
 
+    <div class="tip-box">
+      <span class="tip-icon">🎟️</span>
+      <span><strong>Reservas clave:</strong> Sagrada Família (~09:00) y Casa Batlló (15:30). Reserva también las dos consignas LOCKER LOCK con antelación.</span>
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon">💶</span>
+      <span><strong>Transporte estimado:</strong> Aerobús ~7 € · Metro ~10 € · Taxis 40-60 €. Total ≈ 55-75 €.</span>
+    </div>
   </div>
 
   <!-- MAPAS -->
   <div class="section" id="sec-mapas">
-
     <div class="section-title">🗺️ Lugares</div>
 
+    <div class="map-section-label">Alojamiento y evento</div>
     <div class="card" style="padding: 6px 18px;">
-
-      <a class="map-list-item" href="https://maps.app.goo.gl/pvoi6HV8WP3hb9Wp6" target="_blank">
-        <div class="map-icon-wrap blue">🏨</div>
-        <div class="map-item-text">
-          <div class="map-item-title">Hotel Hesperia Fira</div>
-          <div class="map-item-sub">Mare de Déu de Bellvitge, 3 · L'Hospitalet</div>
-        </div>
-        <div class="map-arrow">›</div>
-      </a>
-
-      <a class="map-list-item" href="https://maps.app.goo.gl/JEvLXEE9j7VrR9sv8" target="_blank">
-        <div class="map-icon-wrap coral">🎉</div>
-        <div class="map-item-text">
-          <div class="map-item-title">LABASAD FEST 2026</div>
-          <div class="map-item-sub">Av. de Vallvidrera, 25 · Barcelona</div>
-        </div>
-        <div class="map-arrow">›</div>
-      </a>
-
-      <a class="map-list-item" href="https://maps.app.goo.gl/ztBqK8K3cMJHLhEJ7" target="_blank">
-        <div class="map-icon-wrap blue">✈️</div>
-        <div class="map-item-text">
-          <div class="map-item-title">Aeropuerto El Prat (BCN)</div>
-          <div class="map-item-sub">Terminal 1 · Vueling</div>
-        </div>
-        <div class="map-arrow">›</div>
-      </a>
-
-      <a class="map-list-item" href="https://maps.app.goo.gl/VQ5MfFn7GNgr6K1x8" target="_blank">
-        <div class="map-icon-wrap sand">🏛️</div>
-        <div class="map-item-text">
-          <div class="map-item-title">Barrio Gótico</div>
-          <div class="map-item-sub">Centro histórico · Barcelona</div>
-        </div>
-        <div class="map-arrow">›</div>
-      </a>
-
-      <a class="map-list-item" href="https://maps.app.goo.gl/nRiXKWQoNyFJSMBD9" target="_blank">
-        <div class="map-icon-wrap sand">⛪</div>
-        <div class="map-item-text">
-          <div class="map-item-title">Sagrada Família</div>
-          <div class="map-item-sub">Eixample · Barcelona</div>
-        </div>
-        <div class="map-arrow">›</div>
-      </a>
-
-      <a class="map-list-item" href="https://maps.app.goo.gl/dvUFCKDRHHhH8DKEA" target="_blank">
-        <div class="map-icon-wrap sand">🏠</div>
-        <div class="map-item-text">
-          <div class="map-item-title">Casa Batlló</div>
-          <div class="map-item-sub">Passeig de Gràcia · Barcelona</div>
-        </div>
-        <div class="map-arrow">›</div>
-      </a>
-
-      <a class="map-list-item" href="https://maps.app.goo.gl/uvbhQp1oCKrG3bSX8" target="_blank">
-        <div class="map-icon-wrap coral">🛒</div>
-        <div class="map-item-text">
-          <div class="map-item-title">Mercat de la Boqueria</div>
-          <div class="map-item-sub">Las Ramblas · Barcelona</div>
-        </div>
-        <div class="map-arrow">›</div>
-      </a>
-
+      <a class="map-list-item" href="https://maps.app.goo.gl/pvoi6HV8WP3hb9Wp6" target="_blank"><div class="map-icon-wrap blue">🏨</div><div class="map-item-text"><div class="map-item-title">Hotel Hesperia Fira</div><div class="map-item-sub">Mare de Déu de Bellvitge, 3 · L'Hospitalet</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Jardins+de+la+Finca+Agusti+Pedro+Pons+Barcelona" target="_blank"><div class="map-icon-wrap coral">🎉</div><div class="map-item-text"><div class="map-item-title">LABASAD FEST 2026</div><div class="map-item-sub">Av. de Vallvidrera, 25 · Barcelona</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Aeropuerto+Josep+Tarradellas+Barcelona+El+Prat" target="_blank"><div class="map-icon-wrap blue">✈️</div><div class="map-item-text"><div class="map-item-title">Aeropuerto El Prat (BCN)</div><div class="map-item-sub">Terminal 1 · Vueling</div></div><div class="map-arrow">›</div></a>
     </div>
 
+    <div class="map-section-label">Consignas de equipaje</div>
+    <div class="card" style="padding: 6px 18px;">
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Locker+Lock+Passeig+de+Gracia+Barcelona" target="_blank"><div class="map-icon-wrap sand">🧳</div><div class="map-item-text"><div class="map-item-title">LOCKER LOCK · Passeig de Gràcia</div><div class="map-item-sub">Día 1 · zona Plaça Catalunya</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Locker+Lock+Sagrada+Familia+Barcelona" target="_blank"><div class="map-icon-wrap sand">🧳</div><div class="map-item-text"><div class="map-item-title">LOCKER LOCK · Sagrada Família</div><div class="map-item-sub">Día 2</div></div><div class="map-arrow">›</div></a>
+    </div>
+
+    <div class="map-section-label">Centro histórico (Día 1)</div>
+    <div class="card" style="padding: 6px 18px;">
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Placa+de+Catalunya+Barcelona" target="_blank"><div class="map-icon-wrap sand">🏛️</div><div class="map-item-text"><div class="map-item-title">Plaça de Catalunya</div><div class="map-item-sub">Punto de llegada del Aerobús</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=La+Rambla+Barcelona" target="_blank"><div class="map-icon-wrap sand">🌳</div><div class="map-item-text"><div class="map-item-title">La Rambla</div><div class="map-item-sub">Paseo central</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Boqueria+Barcelona" target="_blank"><div class="map-icon-wrap coral">🛒</div><div class="map-item-text"><div class="map-item-title">Mercat de la Boqueria</div><div class="map-item-sub">La Rambla</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Placa+Sant+Jaume+Barcelona" target="_blank"><div class="map-icon-wrap sand">🏛️</div><div class="map-item-text"><div class="map-item-title">Plaça Sant Jaume</div><div class="map-item-sub">Barri Gòtic</div></div><div class="map-arrow">›</div></a>
+    </div>
+
+    <div class="map-section-label">Visitas imprescindibles</div>
+    <div class="card" style="padding: 6px 18px;">
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Sagrada+Familia+Barcelona" target="_blank"><div class="map-icon-wrap coral">⛪</div><div class="map-item-text"><div class="map-item-title">Sagrada Família</div><div class="map-item-sub">Eixample</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Casa+Batllo+Barcelona" target="_blank"><div class="map-icon-wrap sand">🏠</div><div class="map-item-text"><div class="map-item-title">Casa Batlló</div><div class="map-item-sub">Passeig de Gràcia · 15:30</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Casa+Mila+La+Pedrera+Barcelona" target="_blank"><div class="map-icon-wrap sand">🏛️</div><div class="map-item-text"><div class="map-item-title">Casa Milà / La Pedrera</div><div class="map-item-sub">Passeig de Gràcia · exterior</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Recinte+Modernista+de+Sant+Pau+Barcelona" target="_blank"><div class="map-icon-wrap sand">🏥</div><div class="map-item-text"><div class="map-item-title">Recinte Modernista de Sant Pau</div><div class="map-item-sub">Modernismo</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Museu+del+Disseny+de+Barcelona" target="_blank"><div class="map-icon-wrap sand">🎨</div><div class="map-item-text"><div class="map-item-title">Museu del Disseny</div><div class="map-item-sub">Glòries</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Bunkers+del+Carmel+Barcelona" target="_blank"><div class="map-icon-wrap sand">🌆</div><div class="map-item-text"><div class="map-item-title">Búnkers del Carmel</div><div class="map-item-sub">Mirador panorámico</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=Catedral+de+Barcelona" target="_blank"><div class="map-icon-wrap sand">⛪</div><div class="map-item-text"><div class="map-item-title">Catedral de Barcelona</div><div class="map-item-sub">Barrio Gótico</div></div><div class="map-arrow">›</div></a>
+      <a class="map-list-item" href="https://www.google.com/maps/search/?api=1&query=El+Born+Barcelona" target="_blank"><div class="map-icon-wrap sand">🍷</div><div class="map-item-text"><div class="map-item-title">El Born</div><div class="map-item-sub">Casco antiguo</div></div><div class="map-arrow">›</div></a>
+    </div>
   </div>
 
-  <!-- BOTTOM NAV -->
   <nav class="bottom-nav">
-    <button class="nav-btn active" onclick="showSection('vuelos', this)">
-      <span class="nav-dot"></span>
-      <span class="icon">✈️</span>
-      Vuelos
-    </button>
-    <button class="nav-btn" onclick="showSection('hotel', this)">
-      <span class="nav-dot"></span>
-      <span class="icon">🏨</span>
-      Hotel
-    </button>
-    <button class="nav-btn" onclick="showSection('itinerario', this)">
-      <span class="nav-dot"></span>
-      <span class="icon">🗓️</span>
-      Itinerario
-    </button>
-    <button class="nav-btn" onclick="showSection('mapas', this)">
-      <span class="nav-dot"></span>
-      <span class="icon">🗺️</span>
-      Mapas
-    </button>
+    <button class="nav-btn active" onclick="showSection('vuelos', this)"><span class="nav-dot"></span><span class="icon">✈️</span>Vuelos</button>
+    <button class="nav-btn" onclick="showSection('hotel', this)"><span class="nav-dot"></span><span class="icon">🏨</span>Hotel</button>
+    <button class="nav-btn" onclick="showSection('itinerario', this)"><span class="nav-dot"></span><span class="icon">🗓️</span>Itinerario</button>
+    <button class="nav-btn" onclick="showSection('mapas', this)"><span class="nav-dot"></span><span class="icon">🗺️</span>Mapas</button>
   </nav>
 
   <script>
@@ -850,34 +581,20 @@
       document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
       document.getElementById('sec-' + id).classList.add('active');
       btn.classList.add('active');
+      window.scrollTo(0, 0);
     }
-
-    // Countdown to departure
     function updateCountdown() {
       const departure = new Date('2026-07-03T09:15:00');
       const now = new Date();
       const diff = departure - now;
-      if (diff <= 0) {
-        document.getElementById('countdown-text').textContent = '¡Buen viaje! 🎉';
-        return;
-      }
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      if (days > 0) {
-        document.getElementById('countdown-text').textContent = `${days}d ${hours}h ${mins}min`;
-      } else {
-        document.getElementById('countdown-text').textContent = `${hours}h ${mins}min`;
-      }
+      if (diff <= 0) { document.getElementById('countdown-text').textContent = '¡Buen viaje! 🎉'; return; }
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins = Math.floor((diff % 3600000) / 60000);
+      document.getElementById('countdown-text').textContent = days > 0 ? `${days}d ${hours}h ${mins}min` : `${hours}h ${mins}min`;
     }
     updateCountdown();
     setInterval(updateCountdown, 60000);
-
-    // Register Service Worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js');
-}
   </script>
-
 </body>
 </html>
